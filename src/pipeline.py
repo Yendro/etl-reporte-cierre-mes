@@ -41,6 +41,11 @@ mapeo_desarrollos = {
         'desarrollo_maestro': 'PUNTA HELENA',
         'formato': 'base_numero'
     },
+    'Parque Pimienta': {
+        'equivalencia_base': 'A',
+        'desarrollo_maestro': 'COIN BUSSINESS CENTER',
+        'formato': 'base_numero'
+    },
     'Cumbres De La Hacienda': {
         'equivalencia_base': 'CUMBRES SUBC',
         'desarrollo_maestro': 'CUMBRES',
@@ -279,7 +284,7 @@ def procesar_csv(archivo_entrada, archivo_salida):
             logging.info(f"  {desarrollo}: {count} filas")
         
         # Guardar el resultado
-        df.to_csv(archivo_salida, index=False, encoding='utf-8')
+        df.to_excel(archivo_salida, index=False, encoding='utf-8')
         logging.info(f"Transformación completada. Archivo guardado: {archivo_salida}")
         logging.info(f"Resumen: {len(df)} filas procesadas")
         
@@ -305,6 +310,7 @@ def probar_casos():
         ('PH ET 1 BIS', 'Punta Helena', 'PH1', 'PUNTA HELENA'),
         ('P1', 'Cumbres De La Hacienda', 'CUMBRES SUBC 1', 'CUMBRES'),
         ('N/A', 'Punta Helena', 'PH', 'PUNTA HELENA'),
+        ('A1', 'Parque Pimienta', 'A', 'COIN BUSSINESS CENTER'),
         ('P1', 'Telchac', 'T1', 'TELCHAC'),
         ('N/A', 'Terramarket', 'TM', 'TERRAMARKET'),
         ('P1', 'San Roque', 'SR RESID 1', 'SAN ROQUE'),
