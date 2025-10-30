@@ -1,2 +1,4 @@
 .venv
 .vscode
+/data/reporte-cierre-mes-transformado.csv
+transformacion_errores.log
