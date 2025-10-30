@@ -84,6 +84,11 @@ mapeo_desarrollos = {
         'desarrollo_maestro': 'HACIENDA TVA',
         'formato': 'base_espacio_numero'
     },
+    'Jardines De La Hacienda': {
+        'equivalencia_base': 'SUBC',
+        'desarrollo_maestro': 'HACIENDA TVA',
+        'formato': 'base_espacio_numero'
+    },
     'Paseo Flamboyanes': {
         'equivalencia_base': 'SUBC',
         'desarrollo_maestro': 'HACIENDA TVA',
@@ -311,10 +316,11 @@ def probar_casos():
         # Casos intermedios
         ('C1', 'San Eduardo', 'SE COMER 1', 'SAN EDUARDO'),
         ('P1', 'Santa Clara', 'SC SUBC 1', 'SANTA CLARA'),
-        ('P30', 'Bosques De La Hacienda', 'SUBC 30', 'HACIENDA TVA'),
-        ('P2', 'Paseo Flamboyanes', 'SUBC 2', 'HACIENDA TVA'),
-        ('P3', 'Paseo Henequen', 'SUBC 3', 'HACIENDA TVA'),
-        ('P4', 'Paseo Ceiba', 'SUBC 4', 'HACIENDA TVA'),
+        ('P1', 'Bosques De La Hacienda', 'SUBC 1', 'HACIENDA TVA'),
+        ('P2', 'Jardines De La Hacienda', 'SUBC 2', 'HACIENDA TVA'),
+        ('P3', 'Paseo Flamboyanes', 'SUBC 3', 'HACIENDA TVA'),
+        ('P4', 'Paseo Henequen', 'SUBC 4', 'HACIENDA TVA'),
+        ('P5', 'Paseo Ceiba', 'SUBC 5', 'HACIENDA TVA'),
         ('N/A', 'Prolongacion', 'HDA PROL', 'HACIENDA TVA'),
         
         # Últimos casos especiales
