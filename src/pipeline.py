@@ -9,7 +9,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('log/transformacion_errores.log'),
+        logging.FileHandler('transformacion_errores.log'),
         logging.StreamHandler(sys.stdout)
     ]
 )
@@ -41,7 +41,7 @@ mapeo_desarrollos = {
         'desarrollo_maestro': 'PUNTA HELENA',
         'formato': 'base_numero'
     },
-    'Cumbres de la Hacienda': {
+    'Cumbres De La Hacienda': {
         'equivalencia_base': 'CUMBRES SUBC',
         'desarrollo_maestro': 'CUMBRES',
         'formato': 'base_espacio_numero'
@@ -79,7 +79,7 @@ mapeo_desarrollos = {
         'desarrollo_maestro': 'SANTA CLARA',
         'formato': 'base_espacio_numero'
     },
-    'Bosques de la Hacienda': {
+    'Bosques De La Hacienda': {
         'equivalencia_base': 'SUBC',
         'desarrollo_maestro': 'HACIENDA TVA',
         'formato': 'base_espacio_numero'
@@ -119,6 +119,7 @@ mapeo_desarrollos = {
 # Mapeo especial para etapas no numéricas
 mapeo_etapas_especiales = {
     'Puerto Telchac': {
+        'Carey': "9",
         'Arena': '19',
         'Coral': '20', 
         'Arrecife': '22'
@@ -297,7 +298,7 @@ def probar_casos():
         ('N/A', 'Fundadores', 'F', 'FUNDADORES'),
         ('N/A', 'Hunucma', 'H', 'HUNUCMA'),
         ('PH ET 1 BIS', 'Punta Helena', 'PH1', 'PUNTA HELENA'),
-        ('P1', 'Cumbres de la Hacienda', 'CUMBRES SUBC 1', 'CUMBRES'),
+        ('P1', 'Cumbres De La Hacienda', 'CUMBRES SUBC 1', 'CUMBRES'),
         ('N/A', 'Punta Helena', 'PH', 'PUNTA HELENA'),
         ('P1', 'Telchac', 'T1', 'TELCHAC'),
         ('N/A', 'Terramarket', 'TM', 'TERRAMARKET'),
@@ -310,7 +311,7 @@ def probar_casos():
         # Casos intermedios
         ('C1', 'San Eduardo', 'SE COMER 1', 'SAN EDUARDO'),
         ('P1', 'Santa Clara', 'SC SUBC 1', 'SANTA CLARA'),
-        ('P30', 'Bosques de la Hacienda', 'SUBC 30', 'HACIENDA TVA'),
+        ('P30', 'Bosques De La Hacienda', 'SUBC 30', 'HACIENDA TVA'),
         ('P2', 'Paseo Flamboyanes', 'SUBC 2', 'HACIENDA TVA'),
         ('P3', 'Paseo Henequen', 'SUBC 3', 'HACIENDA TVA'),
         ('P4', 'Paseo Ceiba', 'SUBC 4', 'HACIENDA TVA'),
@@ -343,7 +344,7 @@ def probar_casos():
 # Ejemplo de uso
 if __name__ == "__main__":
     # Probar casos primero
-    logging.info("=== INICIANDO PRUEBAS ===")
+    logging.info("===> INICIANDO PRUEBAS ===")
     pruebas_exitosas = probar_casos()
     
     if pruebas_exitosas:
