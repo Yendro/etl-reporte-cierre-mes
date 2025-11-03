@@ -43,7 +43,7 @@ mapeo_desarrollos = {
     },
     'Parque Pimienta': {
         'equivalencia_base': 'A',
-        'desarrollo_maestro': 'COIN BUSSINESS CENTER',
+        'desarrollo_maestro': 'COIN',
         'formato': 'base_numero'
     },
     'Cumbres De La Hacienda': {
@@ -226,12 +226,12 @@ def validar_fila(row, index):
     """Valida una fila individual y registra advertencias"""
     try:
         if pd.isna(row['Desarrollo']):
-            logging.warning(f"Fila {index}: Desarrollo está vacío")
+            logging.warning(f"Fila {index}: Desarrollo está vacio")
             return False
             
         desarrollo = str(row['Desarrollo']).strip()
         if desarrollo not in mapeo_desarrollos:
-            logging.warning(f"Fila {index}: Desarrollo '{desarrollo}' no está mapeado")
+            logging.warning(f"Fila {index}: Desarrollo '{desarrollo}' no esta mapeado")
             
         return True
     except Exception as e:
@@ -284,7 +284,7 @@ def procesar_csv(archivo_entrada, archivo_salida):
             logging.info(f"  {desarrollo}: {count} filas")
         
         # Guardar el resultado
-        df.to_excel(archivo_salida, index=False, encoding='utf-8')
+        df.to_csv(archivo_salida, index=False, encoding='utf-8')
         logging.info(f"Transformación completada. Archivo guardado: {archivo_salida}")
         logging.info(f"Resumen: {len(df)} filas procesadas")
         
@@ -310,7 +310,7 @@ def probar_casos():
         ('PH ET 1 BIS', 'Punta Helena', 'PH1', 'PUNTA HELENA'),
         ('P1', 'Cumbres De La Hacienda', 'CUMBRES SUBC 1', 'CUMBRES'),
         ('N/A', 'Punta Helena', 'PH', 'PUNTA HELENA'),
-        ('A1', 'Parque Pimienta', 'A', 'COIN BUSSINESS CENTER'),
+        ('A1', 'Parque Pimienta', 'A1', 'COIN'),
         ('P1', 'Telchac', 'T1', 'TELCHAC'),
         ('N/A', 'Terramarket', 'TM', 'TERRAMARKET'),
         ('P1', 'San Roque', 'SR RESID 1', 'SAN ROQUE'),
@@ -368,11 +368,11 @@ if __name__ == "__main__":
         exito = procesar_csv(archivo_entrada, archivo_salida)
         
         if exito:
-            print("Transformación completada exitosamente.")
+            print("Transformacion completada exitosamente.")
             print("Revisa 'transformacion_errores.log' para ver cualquier advertencia.")
         else:
-            print("Error en la transformación. Revisa el log para más detalles.")
+            print("Error en la transformacion. Revisa el log para más detalles.")
     else:
         logging.error("=== ALGUNAS PRUEBAS FALLARON ===")
         print("Algunas pruebas fallaron. Revisa el log para más detalles.")
-        print("No se procesará el archivo CSV hasta que todas las pruebas pasen.")
+        print("No se procesara el archivo CSV hasta que todas las pruebas pasen.")
