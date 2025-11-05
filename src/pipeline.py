@@ -71,6 +71,11 @@ mapeo_desarrollos = {
         'desarrollo_maestro': 'PUERTO TELCHAC',
         'formato': 'base_espacio_numero'
     },
+    'Mareta': {
+        'equivalencia_base': 'PT MARETA',
+        'desarrollo_maestro': 'PUERTO TELCHAC',
+        'formato': 'solo_base'
+    },
     'San Eduardo': {
         'equivalencia_base': {
             'P': 'SE RESID',
@@ -78,6 +83,14 @@ mapeo_desarrollos = {
         },
         'desarrollo_maestro': 'SAN EDUARDO',
         'formato': 'base_espacio_numero'
+    },
+    'Business Center': {
+        'equivalencia_base': {
+            'MF': 'MF',
+            'F&F': 'F&F'
+        },
+        'desarrollo_maestro': 'COIN BUSINESS CENTER',
+        'formato': 'solo_base'
     },
     'Santa Clara': {
         'equivalencia_base': 'SC SUBC',
@@ -330,6 +343,8 @@ def probar_casos():
         ('N/A', 'Prolongacion', 'HDA PROL', 'HACIENDA TVA'),
         
         # Últimos casos especiales
+        ('MF', 'Business Center', 'MF', 'COIN BUSINESS CENTER'),
+        ('N/A', 'Mareta', 'PT MARETA', 'PUERTO TELCHAC'),
         ('LA', 'Custo', 'CUSTO', 'CUSTO'),
         ('N/A', 'Playaviva Apartments', 'N/A', 'COIN APARTMENTS'),
         ('F1', 'Playaviva Apartments', 'F1', 'COIN APARTMENTS')
